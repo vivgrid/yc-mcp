@@ -5,7 +5,7 @@ go 1.24.2
 toolchain go1.24.5
 
 require (
-	github.com/vivgrid/yc v1.13.4
+	github.com/vivgrid/yc v1.15.2
 	github.com/yomorun/yomo v1.20.6
 )
 

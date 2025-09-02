@@ -15,9 +15,7 @@ const (
 	CmdDeploy  = "deploy"
 	CmdLogs    = "logs"
 	CmdRemove  = "remove"
-	CmdStart   = "start"
 	CmdStatus  = "status"
-	CmdStop    = "stop"
 	CmdUpload  = "upload"
 	CmdVersion = "version"
 )
@@ -64,28 +62,22 @@ func Handler(ctx serverless.Context) {
 	// create
 	case strings.Contains(cmd, CmdCreate):
 		cmd = CmdCreate
-		// deploy
+	// deploy this is an alias of chaining commands (upload -> remove -> create)
 	case strings.Contains(cmd, CmdDeploy):
 		cmd = CmdDeploy
-		// logs
+	// logs
 	case strings.Contains(cmd, CmdLogs):
 		cmd = CmdLogs
-		// remove
+	// remove
 	case strings.Contains(cmd, CmdRemove):
 		cmd = CmdRemove
-		// start
-	case strings.Contains(cmd, CmdStart):
-		cmd = CmdStart
-		// status
+	// status
 	case strings.Contains(cmd, CmdStatus):
 		cmd = CmdStatus
-		// stop
-	case strings.Contains(cmd, CmdStop):
-		cmd = CmdStop
-		// upload
+	// upload
 	case strings.Contains(cmd, CmdUpload):
 		cmd = CmdUpload
-		// version
+	// version
 	case strings.Contains(cmd, CmdVersion):
 		cmd = CmdVersion
 	default:
